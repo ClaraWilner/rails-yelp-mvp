@@ -1,0 +1,11 @@
+
+<%= render @restaurant %>
+<div><%= link_to "Revenir aux restaurants", restaurants_path, class: "text-decoration-none btn btn-primary m-3"%></div>
+
+<% @restaurant.reviews.each do |review| %>
+  <div>
+    <%= "content: #{review.content}  rating: #{review.rating}" %>
+  </div>
+<% end %>
+
+<%= render "reviews/form" %>
